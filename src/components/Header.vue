@@ -9,7 +9,7 @@
       </li>
       <li class="Header__Profile__Image">
         <g-link to="/">
-          <g-image src="~/assets/images/gridsome.png"/>
+          <g-image src="~/assets/images/Logo_black.png"/>
         </g-link>
       </li>
       <li style="text-align: right">
@@ -42,6 +42,6 @@
     text-align: center
 
     img
-      width: 50px
-      border-radius: 50px
+      width: 100%
+      border-radius: 0px
 </style>
