@@ -6,6 +6,7 @@
 		"explore": "gridsome explore"
 	},
 	"dependencies": {
+		"@gridsome/plugin-google-analytics": "^0.1.0",
 		"@gridsome/source-filesystem": "^0.6.0",
 		"@gridsome/transformer-remark": "^0.3.3",
 		"gridsome": "^0.7.1",
