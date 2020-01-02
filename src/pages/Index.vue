@@ -4,6 +4,7 @@
     <Hero/>
     <Portfolio/>
     <About/>
+    <Pages/>
     <Blog/>
     <Contact/>
     <Footer/>
@@ -15,6 +16,7 @@
   import Hero from '~/components/Hero.vue';
   import Portfolio from '~/components/Portfolio.vue';
   import About from '~/components/About.vue';
+  import Pages from '~/components/Archive.vue';
   import Blog from '~/components/Blog.vue';
   import Contact from '~/components/Contact.vue';
   import Footer from '~/components/Footer.vue';
@@ -25,6 +27,7 @@
       Hero,
       Portfolio,
       About,
+      Pages,
       Blog,
       Contact,
       Footer

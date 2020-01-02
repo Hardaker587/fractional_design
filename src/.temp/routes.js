@@ -1,5 +1,9 @@
 export default [
   {
+    path: "/pages/:slug/",
+    component: () => import(/* webpackChunkName: "page--src--templates--pages-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/Pages.vue")
+  },
+  {
     path: "/blog/:slug/",
     component: () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/BlogPost.vue")
   },
