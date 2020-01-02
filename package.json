@@ -9,6 +9,7 @@
 		"@gridsome/source-filesystem": "^0.6.0",
 		"@gridsome/transformer-remark": "^0.3.3",
 		"gridsome": "^0.7.1",
+		"netlify-cms": "^2.10.2",
 		"node-sass": "^4.11.0",
 		"sass-loader": "^7.0.1"
 	},
