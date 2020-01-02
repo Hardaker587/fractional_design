@@ -2,7 +2,7 @@
 title: Justice League
 date: '2017-08-14 20:08:08 -0700'
 slug: justice-league
-thumbnail: /static/images/ruslan-bardash-351288-unsplash.jpg
+thumbnail: /static/images/asset-1-3x.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
