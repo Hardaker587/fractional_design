@@ -3,7 +3,7 @@ backend:
   # Reference: https://www.netlifycms.org/docs/authentication-backends/
   name: github
   branch: master
-  repo: mittalyashu/gridsome-starter-netlifycms
+  repo: Hardaker587/fractional_design
 
 media_folder: "static/images"
 public_folder: "static/images"
