@@ -28,54 +28,54 @@ collections:
       - { label: "title", name: "title", widget: "string" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-    folder: "src/data"  
-    files:
-      - name: "about"
-        label: "About"
-        file: "src/data/About.yml"
-        fields:
-          - { label: "Title", name: "title", widget: "string", default: "About" }
-          - name: "items"
-            label: "Items"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-
-      - name: "contact"
-        label: "Contact"
-        file: "src/data/Contact.yml"
-        fields:
-          - { label: "Title", name: "title", widget: "string", default: "Contact" }
-          - { label: "Description", name: "description", widget: "text" }
-
-      - name: "hero"
-        label: "Hero"
-        file: "src/data/Hero.yml"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-
-      - name: "portfolio"
-        label: "Portfolio"
-        file: "src/data/Portfolio.yml"
-        fields:
-          - { label: "Title", name: "title", widget: "string", default: "Portfolio" }
-          - name: "items"
-            label: "Work"
-            widget: "list"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-
-      - name: "socialmedia"
-        label: "Social Media"
-        file: "src/data/SocialMedia.yml"
-        fields:
-          - { label: "Title", name: "title", widget: "string", default: "Social Media" }
-          - name: "items"
-            label: "Social Media"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
+#    folder: "src/data"  
+#    files:
+#      - name: "about"
+#        label: "About"
+#        file: "src/data/About.yml"
+#        fields:
+#          - { label: "Title", name: "title", widget: "string", default: "About" }
+#          - name: "items"
+#            label: "Items"
+#            widget: "list"
+#            fields:
+#              - { label: "Title", name: "title", widget: "string" }
+#              - { label: "Description", name: "description", widget: "text" }
+#
+#      - name: "contact"
+#        label: "Contact"
+#        file: "src/data/Contact.yml"
+#        fields:
+#          - { label: "Title", name: "title", widget: "string", default: "Contact" }
+#          - { label: "Description", name: "description", widget: "text" }
+#
+#      - name: "hero"
+#        label: "Hero"
+#        file: "src/data/Hero.yml"
+#        fields:
+#          - { label: "Title", name: "title", widget: "string" }
+#          - { label: "Description", name: "description", widget: "text" }
+#
+#      - name: "portfolio"
+#        label: "Portfolio"
+#        file: "src/data/Portfolio.yml"
+#        fields:
+#          - { label: "Title", name: "title", widget: "string", default: "Portfolio" }
+#          - name: "items"
+#            label: "Work"
+#            widget: "list"
+#            fields:
+#              - { label: "Title", name: "title", widget: "string" }
+#              - { label: "Image", name: "image", widget: "image" }
+#
+#      - name: "socialmedia"
+#        label: "Social Media"
+#        file: "src/data/SocialMedia.yml"
+#        fields:
+#          - { label: "Title", name: "title", widget: "string", default: "Social Media" }
+#          - name: "items"
+#            label: "Social Media"
+#            widget: "list"
+#            fields:
+#              - { label: "Name", name: "name", widget: "string" }
+#              - { label: "URL", name: "url", widget: "string" }
