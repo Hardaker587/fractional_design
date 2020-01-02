@@ -28,7 +28,7 @@ collections:
       - { label: "title", name: "title", widget: "string" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-#    folder: "src/data"  
+    folder: "src/data"  
 #    files:
 #      - name: "about"
 #        label: "About"
