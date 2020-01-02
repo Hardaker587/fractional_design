@@ -20,8 +20,9 @@ collections:
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
 
-  - name: "data"
-    label: "Data"
+  - name: "pages"
+    label: "Pages"
+    create: true
     files:
       - name: "about"
         label: "About"
