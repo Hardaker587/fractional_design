@@ -1,27 +1,45 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fractional Design Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fractional Design Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
+
 <body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  
-  <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-  
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+<!--
+    <script defer>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+
+        function addLogo (){
+            let target = document.querySelectorAll('svg')[0];
+            let child = target.firstChild;
+
+            var img = document.createElement("img");
+
+            img.src = "~/assets/images/Logo_black.png";
+
+            target.insertBefore(img, child);
+        }
+        
+        document.setTimeout(addLogo(), 3000);
+    </script>
+-->
+
 </body>
+
 </html>

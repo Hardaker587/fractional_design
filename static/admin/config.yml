@@ -4,6 +4,8 @@ backend:
   name: github
   branch: master
   repo: Hardaker587/fractional_design
+  
+publish_mode: editorial_workflow  
 
 media_folder: "static/images"
 public_folder: "static/images"
@@ -19,6 +21,7 @@ collections:
       - { label: "date", name: "date", widget: "date" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png" }
 
   - name: "pages"
     label: "Pages"
@@ -28,6 +31,7 @@ collections:
       - { label: "title", name: "title", widget: "string" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-      - { label: "Custom Styles", name: "customStyles", widget: "markdown" }
-      - { label: "Custom Scripts", name: "customScripts", widget: "markdown" }
+      - { label: "Custom Styles", name: "customStyles", widget: "markdown", hint: "Include all markdown tags" }
+      - { label: "Custom Scripts", name: "customScripts", widget: "markdown", hint: "Include all markdown tags" }
+      - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png" }
     folder: "pages"  
