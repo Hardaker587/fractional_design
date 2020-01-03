@@ -1,6 +1,6 @@
 <template>
   <ul id="portfolio">
-    <li v-for="{ node } in $static.allPortfolioPost.edges" :key="node.id">
+    <li v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
      <img :src="node.thumbnail" />
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
@@ -10,10 +10,9 @@
   </ul>
 </template>
 
-<!--
 <static-query>
   query Portfolio {
-    allPortfolioPost(sortBy: "DESC") {
+    allPortfolio(sortBy: "DESC") {
       edges {
         node {
           id
@@ -26,7 +25,6 @@
     }
   }
 </static-query>
--->
 
 <style lang="sass" scoped>
   #portfolio
