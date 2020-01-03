@@ -4,12 +4,15 @@ backend:
   name: github
   branch: master
   repo: Hardaker587/fractional_design
+  accept_roles: 
+    - admin
+    - editor
   
 publish_mode: editorial_workflow
 site_url: https://www.fractionaldesign.co.za
 
-media_folder: "/images"
-public_folder: "static/images"
+media_folder: "static/images"
+public_folder: "/images"
 
 collections:
   - name: "blogs"
