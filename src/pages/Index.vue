@@ -4,7 +4,9 @@
     <Hero/>
     <Portfolio/>
     <About/>
+    <h2>Latest passion projects</h2>
     <Pages/>
+    <h2>From the blog</h2>
     <Blog/>
     <Contact/>
     <Footer/>

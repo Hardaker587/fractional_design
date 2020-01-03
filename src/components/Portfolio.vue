@@ -1,69 +1,58 @@
 <template>
-  <ul id="work" class="Portfolio">
-    <li v-for="item in Portfolio.items" class="Portfolio__Content__Card" :style="item.image | truncate(8)" :key="item.title">
-      <h2>{{ item.title }}</h2>
+  <ul id="portfolio">
+    <li v-for="{ node } in $static.allPortfolioPost.edges" :key="node.id">
+     <img :src="node.thumbnail" />
+      <g-link :to="node.path">
+        <h6 v-html="node.title"/>
+      </g-link>
+      <span v-html="node.date"/>
     </li>
   </ul>
 </template>
 
-<script>
-	import Portfolio from '~/data/Portfolio.yml'
-
-	export default {
-		computed: {
-			Portfolio () {
-				return Portfolio
-			}
-    },
-    filters: {
-      truncate: function(text, length) {
-        return "background-image: url(" + text.substring(length) + ")"
+<static-query>
+  query Portfolio {
+    allPortfolioPost(sortBy: "DESC") {
+      edges {
+        node {
+          id
+          title
+          date (format: "YYYY")
+          path
+          thumbnail (width: 720, height: 200, quality: 90)
+        }
       }
     }
-  } 
-</script>
-
+  }
+</static-query>
 
 <style lang="sass" scoped>
-  .Portfolio
+  #portfolio
     padding: 30px 0
-    
-  .Portfolio__Content__Card
-    background-position: center
-    background-size: cover
-    background-repeat: no-repeat
-    height: 300px
-    border-radius: 5px
-    display: flex
-    align-items: flex-end
-    margin-bottom: 1em
-    position: relative
 
-    &::before
-      content: ""
-      background: linear-gradient(to top, #000, rgba(225,255, 255, 0))
-      opacity: 0.45
-      border-radius: 5px
-      position: absolute
-      top: 0
-      right: 0
-      left: 0
-      bottom: 0
-      z-index: 0
+    li
+      display: flex
+      margin-bottom: 10px
 
-    h2
-      position: relative
-      font-weight: 600
-      color: white
-      padding-bottom: 20px
-      padding-left: 20px
+      &:last-child
+        margin-bottom: 0
+
+      a
+        margin-right: auto
+
+      span
+        display: flex
+        align-items: center
+        color: #cdcdcd
+        font-size: 14px
 
   @media (min-width: 576px)
-    .Portfolio
+    #portfolio
+      padding: 50px 0
       display: grid
       grid-template-columns: repeat(2, auto)
       grid-gap: 2em
 
-    .Portfolio__Content__Card
-      margin: 0
+      li
+        margin-bottom: 0
 </style>

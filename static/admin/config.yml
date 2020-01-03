@@ -39,3 +39,15 @@ collections:
       - { label: "Custom Scripts", name: "customScripts", widget: "markdown", hint: "Include all markdown tags", required: false }
       - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false }
     folder: "pages"  
+    
+    - name: "portfolio"
+    label: "Portfolio"
+    folder: "portfolio"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "title", name: "title", widget: "string" }
+      - { label: "date", name: "date", widget: "date" }
+      - { label: "slug", name: "slug", widget: "string" }
+      - { label: "body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false}
