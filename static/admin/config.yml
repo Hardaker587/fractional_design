@@ -5,10 +5,11 @@ backend:
   branch: master
   repo: Hardaker587/fractional_design
   
-publish_mode: editorial_workflow  
+publish_mode: editorial_workflow
+site_url: https://www.fractionaldesign.co.za
 
-media_folder: "/static/images"
-public_folder: "/static/images"
+media_folder: "/images"
+public_folder: "static/images"
 
 collections:
   - name: "blogs"
@@ -31,7 +32,7 @@ collections:
       - { label: "title", name: "title", widget: "string" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-      - { label: "Custom Styles", name: "customStyles", widget: "markdown", hint: "Include all markdown tags" }
-      - { label: "Custom Scripts", name: "customScripts", widget: "markdown", hint: "Include all markdown tags" }
-      - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png" }
+      - { label: "Custom Styles", name: "customStyles", widget: "markdown", hint: "Include all markdown tags", required: false }
+      - { label: "Custom Scripts", name: "customScripts", widget: "markdown", hint: "Include all markdown tags", required: false }
+      - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false }
     folder: "pages"  
