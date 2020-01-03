@@ -32,7 +32,7 @@
       Pages,
       Blog,
       Contact,
-      Footer
+      Footer,
     },
   }
 </script>

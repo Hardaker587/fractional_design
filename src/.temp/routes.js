@@ -8,9 +8,17 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/BlogPost.vue")
   },
   {
+    path: "/projects/",
+    component: () => import(/* webpackChunkName: "page--src--pages--projects-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/projects.vue")
+  },
+  {
+    path: "/blogarchive/",
+    component: () => import(/* webpackChunkName: "page--src--pages--blogarchive-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/blogarchive.vue")
+  },
+  {
     name: "404",
     path: "/404/",
-    component: () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/node_modules/gridsome/app/pages/404.vue")
+    component: () => import(/* webpackChunkName: "page--src--pages--404-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/404.vue")
   },
   {
     name: "home",
@@ -20,7 +28,7 @@ export default [
   {
     name: "*",
     path: "*",
-    component: () => import(/* webpackChunkName: "page--node-modules--gridsome--app--pages--404-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/node_modules/gridsome/app/pages/404.vue")
+    component: () => import(/* webpackChunkName: "page--src--pages--404-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/404.vue")
   }
 ]
 

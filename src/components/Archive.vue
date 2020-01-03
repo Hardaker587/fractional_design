@@ -1,12 +1,14 @@
 <template>
-  <ul id="pages">
+<ul id="pages">
+   <carousel :nav="true">
     <li v-for="{ node } in $static.allPages.edges" :key="node.id">
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
       </g-link>
       <span v-html="node.date"/>
     </li>
-  </ul>
+    </carousel>
+    </ul>
 </template>
 
 <static-query>
@@ -29,13 +31,19 @@
 
     li
       display: flex
+      justify-content: center
       margin-bottom: 10px
+      background: rgb(50,50,50)
+      border-radius: 10px
+      box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.5)
+      text-align: center
+      padding: 10px
+      margin-left: 5px
 
-      &:last-child
-        margin-bottom: 0
-
-      a
-        margin-right: auto
+      &:hover
+        background: #bf202f
+    a
+      color: #fff !important 
 
       span
         display: flex

@@ -9,7 +9,8 @@ body
   font-family: 'Nunito', sans-serif
   line-height: 1.5
   font-size: 16px
-  background: url('../../assets/images/Services.png') fixed
+  background: #fafafa
+  //background: url('../../assets/images/Services.png') fixed
 
 a
   text-decoration: none
@@ -46,16 +47,36 @@ h6
   padding-left: 15px
   margin-right: auto
   margin-left: auto
-  background: #fff
+  //background: #fff
+
+.owl-item
+    margin: 10px 0
+    
+.not-found .container
+    height: 100vh
+    display: flex
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+    
+.not-found footer
+    position: absolute
+    bottom: 0    
+    
+.not-found header
+    position: absolute
+    top: 0        
 
 @media (min-width:768px)
-  .container
+  .container, footer, header
     width: 750px
 
 @media (min-width:992px)
-  .container
+  .container, footer, header
     width: 970px
 
 @media (min-width:1200px)
-  .container
+  .container, footer, header
     width: 1170px
+    
+    

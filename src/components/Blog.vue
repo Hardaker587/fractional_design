@@ -1,5 +1,6 @@
 <template>
   <ul id="blog">
+   <carousel :nav="true">
     <li v-for="{ node } in $static.allBlogPost.edges" :key="node.id">
      <img :src="node.thumbnail" />
       <g-link :to="node.path">
@@ -7,6 +8,7 @@
       </g-link>
       <span v-html="node.date"/>
     </li>
+    </carousel>
   </ul>
 </template>
 

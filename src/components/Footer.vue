@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <span>Copyright © 2018 Gridsome</span>
+    <span>Copyright ©{{ new Date().getFullYear() }} Fractional Design</span>
     <ul>
       <li>
 				<a href="#about">About</a>

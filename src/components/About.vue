@@ -28,6 +28,10 @@
 
     li
       margin-top: 15px
+      background: #fff
+      border-radius: 5px;
+      padding: 20px
+      box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.5)
 
       h3
         margin-bottom: 5px

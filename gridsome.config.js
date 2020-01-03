@@ -22,7 +22,7 @@ module.exports = {
         {
             use: '@gridsome/source-filesystem',
             options: {
-                path: 'pages/*.md',
+                path: 'sitePages/*.md',
                 typeName: 'Pages',
                 route: '/pages/:slug'
             }

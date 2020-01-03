@@ -17,10 +17,10 @@
 			<div class="Contact__Form">
 				<form action="/thank-you">
 					<label for="name">Name</label>
-					<input type="name" placeholder="Incognito">
+					<input type="name" placeholder="What can we call you?">
 					
 					<label for="email">Email</label>
-					<input type="email" placeholder="incognito@email.com">
+					<input type="email" placeholder="email@domain.com">
 					
 					<label for="message">Message</label>
 					<textarea type="message" placeholder="Your message..."/>
@@ -93,19 +93,21 @@
 				button
 					margin-top: 30px
 					padding: 15px
-					width: 100%
 					border: none
 					border-radius: 50px
 					cursour: pointer
 					font-size: 16px
 					font-weight: 700
 					text-transform: uppercase
-					background-color: #CFCFCF
+					background-color: rgb(50,50,50)
 					color: white
 					transition: 0.2s
+					float: right
+					width: 200px
+					margin-left: auto
 
 					&:hover
-						background-color: #4DBA87
+						background-color: #bf202f
 					
 	.Contact__SocialMedia__Icons
 		display: flex
