@@ -26,6 +26,14 @@ module.exports = {
                 typeName: 'Pages',
                 route: '/pages/:slug'
             }
+		},
+        {
+            use: '@gridsome/source-filesystem',
+            options: {
+                path: 'portfolio/*.md',
+                typeName: 'Portfolio',
+                route: '/portfolio/:slug'
+            }
 		}
 	]
 }

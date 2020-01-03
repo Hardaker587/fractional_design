@@ -40,7 +40,7 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false }
     folder: "pages"  
     
-    - name: "portfolio"
+  - name: "portfolio"
     label: "Portfolio"
     folder: "portfolio"
     create: true
