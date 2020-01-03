@@ -10,6 +10,7 @@
   </ul>
 </template>
 
+<!--
 <static-query>
   query Portfolio {
     allPortfolioPost(sortBy: "DESC") {
@@ -25,6 +26,7 @@
     }
   }
 </static-query>
+-->
 
 <style lang="sass" scoped>
   #portfolio

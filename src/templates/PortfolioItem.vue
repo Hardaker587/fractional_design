@@ -29,6 +29,7 @@
   }
 </script>
 
+<!--
 <page-query>
   query PortfolioItem ($path: String!) {
     portfolioItem (path: $path) {
@@ -38,6 +39,7 @@
     }
   }
 </page-query>
+-->
 
 <style lang="sass">
   .article
