@@ -19,14 +19,14 @@ module.exports = {
                 route: '/blog/:slug'
             }
 		},
-        {
-            use: '@gridsome/source-filesystem',
-            options: {
-                path: 'sitePages/*.md',
-                typeName: 'Pages',
-                route: '/sitePages/:slug'
-            }
-		},
+//        {
+//            use: '@gridsome/source-filesystem',
+//            options: {
+//                path: 'sitePages/*.md',
+//                typeName: 'Pages',
+//                route: '/sitePages/:slug'
+//            }
+//		},
         {
             use: '@gridsome/source-filesystem',
             options: {
