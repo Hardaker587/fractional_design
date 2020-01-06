@@ -1,13 +1,11 @@
 <template>
 <ul id="pages">
-   <carousel :nav="true">
     <li v-for="{ node } in $static.allPages.edges" :key="node.id">
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
       </g-link>
       <span v-html="node.date"/>
     </li>
-    </carousel>
     </ul>
 </template>
 
