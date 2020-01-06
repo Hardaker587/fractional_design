@@ -1,6 +1,6 @@
 export default [
   {
-    path: "/pages/:slug/",
+    path: "/sitePages/:slug/",
     component: () => import(/* webpackChunkName: "page--src--templates--pages-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/Pages.vue")
   },
   {
