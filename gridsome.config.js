@@ -24,7 +24,7 @@ module.exports = {
             options: {
                 path: 'sitePages/*.md',
                 typeName: 'Pages',
-                route: '/pages/:slug'
+                route: '/sitePages/:slug'
             }
 		},
         {
