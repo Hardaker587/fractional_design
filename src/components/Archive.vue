@@ -9,6 +9,7 @@
     </ul>
 </template>
 
+<!--
 <static-query>
   query Pages {
     allPages(sortBy: "DESC") {
@@ -22,6 +23,7 @@
     }
   }
 </static-query>
+-->
 
 <style lang="sass" scoped>
   #pages

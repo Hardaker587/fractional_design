@@ -29,6 +29,7 @@
   }
 </script>
 
+<!--
 <page-query>
   query Pages ($path: String!) {
     pages (path: $path) {
@@ -37,6 +38,7 @@
     }
   }
 </page-query>
+-->
 
 <style lang="sass">
   .article
