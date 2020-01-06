@@ -3,7 +3,7 @@
   
 <div>
   <b-navbar toggleable="lg" type="light" variant="light">
-    <b-navbar-brand href="#"><g-image src="~/assets/images/Logo_black.png"/></b-navbar-brand>
+    <b-navbar-brand href="/"><g-image src="~/assets/images/Logo_black.png"/></b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,7 +15,7 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="#">Portfolio</b-nav-item>
         <b-nav-item href="#">Projects</b-nav-item>
-        <b-nav-item href="#">Blog</b-nav-item>
+        <b-nav-item href="/blogarchive">Blog</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

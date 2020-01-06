@@ -1,10 +1,11 @@
 <template>
-	<div id="contact">
-		<h2>{{ Contact.title }}</h2>
+	<div id="contact" class="d-flex align-items-center">
 		<div class="Contact__Content">
 			<!-- Content -->
-			<div class="Contact__Info">
+			<div class="Contact__Info d-flex flex-column">
+					<h2>{{ Contact.title }}</h2>
 				<p>{{ Contact.description }} </p>
+<!--
 				<ul class="Contact__SocialMedia__Icons">
 					<li v-for="item in SocialMedia.items" :key="item.name">
 						<a :href="item.link">
@@ -12,10 +13,11 @@
 						</a>
 					</li>
 				</ul>
+-->
 			</div>
 			<!-- Form -->
 			<div class="Contact__Form">
-				<form action="/thank-you">
+				<form action="/thank-you" netlify>
 					<label for="name">Name</label>
 					<input type="name" placeholder="What can we call you?">
 					
@@ -33,16 +35,16 @@
 
 <script>
 	import Contact from '~/data/Contact.yml'
-	import SocialMedia from '~/data/SocialMedia.yml'
+	//import SocialMedia from '~/data/SocialMedia.yml'
 
 	export default {
 		computed: {
 			Contact () {
 				return Contact
-			},
-			SocialMedia () {
-				return SocialMedia
 			}
+//			SocialMedia () {
+//				return SocialMedia
+//			}
 		}
 	}  
 </script>
@@ -125,11 +127,23 @@
 		.Contact__Content
 			display: flex
 			flex-direction: row
+			width: 100%
 
 		.Contact__Info
 			width: 25%
 
 		.Contact__Form
 			width: 70%
+
+	@media (max-width: 576px)
+		.Contact__Content
+			display: flex
+			flex-direction: column
+
+		.Contact__Info
+			width: 100%
+
+		.Contact__Form
+			width: 100%
 </style>
 

@@ -48,4 +48,14 @@
 
       li
         margin-top: 0
+        
+  @media (max-width: 576px)
+    #about
+      display: grid
+      grid-template-columns: repeat(1, auto)
+      grid-gap: 2em
+
+      li
+        margin-top: 0
+        max-width: 100%
 </style>

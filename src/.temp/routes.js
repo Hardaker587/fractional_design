@@ -8,6 +8,10 @@ export default [
     component: () => import(/* webpackChunkName: "page--src--templates--blog-post-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/BlogPost.vue")
   },
   {
+    path: "/thank-you/",
+    component: () => import(/* webpackChunkName: "page--src--pages--thank-you-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/thank-you.vue")
+  },
+  {
     path: "/projects/",
     component: () => import(/* webpackChunkName: "page--src--pages--projects-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/projects.vue")
   },
