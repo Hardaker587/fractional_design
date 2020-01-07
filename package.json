@@ -18,7 +18,7 @@
 		"sass-loader": "^7.0.1",
 		"vue": "^2.6.11",
 		"vue-burger-menu": "^2.0.3",
-		"vue-owl-carousel": "^2.0.3"
+		"vue-owl-carousel2": "^2.0.7"
 	},
 	"license": "MIT",
 	"devDependencies": {
