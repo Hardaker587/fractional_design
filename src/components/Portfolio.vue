@@ -1,12 +1,14 @@
 <template>
   <ul id="portfolio">
-    <li v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
+    <vue-glide>
+    <vue-glide-slide v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
      <img :src="node.thumbnail" />
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
       </g-link>
       <span v-html="node.date"/>
-    </li>
+    </vue-glide-slide>
+    </vue-glide>
   </ul>
 </template>
 
