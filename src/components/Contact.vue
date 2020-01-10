@@ -5,19 +5,11 @@
 			<div class="Contact__Info d-flex flex-column">
 					<h2>{{ Contact.title }}</h2>
 				<p>{{ Contact.description }} </p>
-<!--
-				<ul class="Contact__SocialMedia__Icons">
-					<li v-for="item in SocialMedia.items" :key="item.name">
-						<a :href="item.link">
-							<g-image immediate="true" :alt="item.name" :src="'/images/' + item.name + '.svg'" />
-						</a>
-					</li>
-				</ul>
--->
 			</div>
 			<!-- Form -->
 			<div class="Contact__Form">
-				<form action="/thank-you" name="contact" method="POST" data-netlify="true">
+				<form action="/thank-you" name="contact" method="POST" netlify data-netlify-honeypot="bot-field">
+				<input type="hidden" name="form-name" value="contact" />
 					<label for="name">Name</label>
 					<input type="name" placeholder="What can we call you?">
 					
