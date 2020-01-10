@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <!-- A little help for the Netlify post-processing bots -->
+				<form action="/thank-you" name="contact" method="POST" netlify data-netlify-honeypot="bot-field" hidden>
+				<input type="hidden" name="form-name" value="contact" />
+					<label for="name">Name</label>
+					<input type="name" placeholder="What can we call you?">
+					
+					<label for="email">Email</label>
+					<input type="email" placeholder="email@domain.com">
+					
+					<label for="message">Message</label>
+					<textarea type="message" placeholder="Your message..."/>
+					<button type="submit">Submit</button>
+				</form>
+
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
