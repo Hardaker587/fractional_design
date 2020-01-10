@@ -3,10 +3,10 @@
     <Header/>
     <div class="article">
       <div class="meta">
-        <h1>{{ $page.portfolioItem.title }}</h1>
-        <span>{{ $page.portfolioItem.date }}</span>
+        <h1>{{ $page.portfolio.title }}</h1>
+        <span>{{ $page.portfolio.date }}</span>
       </div>
-      <div class="article__content" v-html="$page.portfolioItem.content" />
+      <div class="article__content" v-html="$page.portfolio.content" />
     </div>
     <Footer/>
   </Layout>
@@ -23,15 +23,15 @@
     },
     metaInfo () {
       return {
-        title: this.$page.portfolioItem.title
+        title: this.$page.portfolio.title
       }
     }
   }
 </script>
 
 <page-query>
-  query PortfolioItem ($path: String!) {
-    portfolioItem (path: $path) {
+  query Portfolio ($path: String!) {
+    portfolio (path: $path) {
       title
       date (format: "DD MMMM YYYY")
       content

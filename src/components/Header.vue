@@ -13,35 +13,13 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">Portfolio</b-nav-item>
-        <b-nav-item href="#">Projects</b-nav-item>
+        <b-nav-item href="/portfolio-page">Portfolio</b-nav-item>
+        <b-nav-item href="/projects">Projects</b-nav-item>
         <b-nav-item href="/blogarchive">Blog</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </div>
-  
-<!--
-    <ul>
-      <li>
-          <g-link to="/blogarchive">Blog</g-link>
-      </li>
-      <li>
-        <g-link to="/projects">Projects</g-link>
-      </li>
-            <li>
-        <a href="/#blog">Blogs</a>
-      </li>
-      <li>
-        <a href="/#contact">Contact</a>
-      </li>
-      <div class="Header__Profile__Image">
-        <g-link to="/">
-          <g-image src="~/assets/images/Logo_black.png"/>
-        </g-link>
-      </div>
-    </ul>
--->
   </header>
 </template>
 

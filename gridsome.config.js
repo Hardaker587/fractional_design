@@ -24,13 +24,13 @@ module.exports = {
             options: {
                 path: 'sitePages/*.md',
                 typeName: 'Pages',
-                route: '/sitePages/:slug'
+                route: '/pages/:slug'
             }
 		},
         {
             use: '@gridsome/source-filesystem',
             options: {
-                path: 'portfolio/*.md',
+                path: 'portfolioArchive/*.md',
                 typeName: 'Portfolio',
                 route: '/portfolio/:slug'
             }

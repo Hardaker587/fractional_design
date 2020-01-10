@@ -17,7 +17,7 @@
 			</div>
 			<!-- Form -->
 			<div class="Contact__Form">
-				<form action="/thank-you" netlify>
+				<form action="/thank-you" method="POST" netlify>
 					<label for="name">Name</label>
 					<input type="name" placeholder="What can we call you?">
 					

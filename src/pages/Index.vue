@@ -16,7 +16,7 @@
 <script>
   import Header from '~/components/Header.vue';
   import Hero from '~/components/Hero.vue';
-  import Portfolio from '~/components/Portfolio.vue';
+  import Portfolio from '~/components/Portfolios.vue';
   import About from '~/components/About.vue';
   import Pages from '~/components/Archive.vue';
   import Blog from '~/components/Blog.vue';

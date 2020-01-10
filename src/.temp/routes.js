@@ -1,7 +1,11 @@
 export default [
   {
-    path: "/sitePages/:slug/",
+    path: "/pages/:slug/",
     component: () => import(/* webpackChunkName: "page--src--templates--pages-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/Pages.vue")
+  },
+  {
+    path: "/portfolio/:slug/",
+    component: () => import(/* webpackChunkName: "page--src--templates--portfolio-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/templates/Portfolio.vue")
   },
   {
     path: "/blog/:slug/",
@@ -10,6 +14,10 @@ export default [
   {
     path: "/thank-you/",
     component: () => import(/* webpackChunkName: "page--src--pages--thank-you-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/thank-you.vue")
+  },
+  {
+    path: "/portfolio-page/",
+    component: () => import(/* webpackChunkName: "page--src--pages--portfolio-page-vue" */ "/Users/gavin/Documents/GitHub/fractional_design/src/pages/portfolioPage.vue")
   },
   {
     path: "/projects/",
