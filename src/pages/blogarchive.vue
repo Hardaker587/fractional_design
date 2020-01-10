@@ -9,7 +9,7 @@
 
 <script>
   import Header from '~/components/Header.vue';
-  import Blog from '~/components/Blog.vue';
+  import Blog from '~/components/BlogPage.vue';
   import Footer from '~/components/Footer.vue';
   
   export default {
