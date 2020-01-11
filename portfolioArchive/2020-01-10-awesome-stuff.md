@@ -48,18 +48,11 @@ thumbnail: /images/mitchell-griest-687949-unsplash.jpg
     </div>
 </div>
 
-<style>
-html {
-  overflow-x: hidden;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
+<style scoped>
+
 .totalcontainer {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 200px);
   overflow: hidden;
 }
 .container1 {
