@@ -7,6 +7,7 @@ backend:
   accept_roles: 
     - admin
     - editor
+  logo_url: https://fractionaldesign.co.za/assets/static/Logo_black.png
   
 publish_mode: editorial_workflow
 site_url: https://www.fractionaldesign.co.za
@@ -42,7 +43,7 @@ collections:
     
   - name: "portfolio"
     label: "Portfolio"
-    folder: "portfolio"
+    folder: "portfolioArchive"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
