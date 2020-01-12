@@ -32,7 +32,7 @@ module.exports = {
             options: {
                 path: 'portfolioArchive/*.md',
                 typeName: 'Portfolio',
-                route: '/portfolio/:slug'
+                route: '/portfolioArchive/:slug'
             }
 		}
 	],
