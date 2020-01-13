@@ -2,7 +2,9 @@
   <ul id="portfolio">
     <vue-glide>
     <vue-glide-slide v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
-     <img :src="node.thumbnail" />
+    <div class="image-container">
+        <img :src="node.thumbnail" />
+    </div>
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
       </g-link>
@@ -47,6 +49,20 @@
         align-items: center
         color: #cdcdcd
         font-size: 14px
+        
+        
+    .image-container
+        height: 200px
+        width: 100%
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        
+        img
+            height: 100%
+            width: auto
+            max-width: unset
 
   @media (min-width: 576px)
     #portfolio

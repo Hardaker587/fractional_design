@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container bg-light">
       <slot/>
     </div>
   </div>

@@ -11,13 +11,13 @@
 				<form action="/thank-you" name="contact" method="POST" netlify data-netlify-honeypot="bot-field">
 				<input type="hidden" name="form-name" value="contact" />
 					<label for="name">Name</label>
-					<input type="name" placeholder="What can we call you?">
+					<input type="name" placeholder="What can we call you?" class="bg-light">
 					
 					<label for="email">Email</label>
-					<input type="email" placeholder="email@domain.com">
+					<input type="email" placeholder="email@domain.com" class="bg-light">
 					
 					<label for="message">Message</label>
-					<textarea type="message" placeholder="Your message..."/>
+					<textarea type="message" placeholder="Your message..." class="bg-light"/>
 					<button type="submit">Submit</button>
 				</form>
 			</div>

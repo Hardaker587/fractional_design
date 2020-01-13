@@ -2,7 +2,9 @@
   <ul id="blog">
    <vue-glide>
     <vue-glide-slide v-for="{ node } in $static.allBlogPost.edges" :key="node.id">
-     <img :src="node.thumbnail" />
+     <div class="image-container">
+         <img :src="node.thumbnail" />
+     </div>
       <g-link :to="node.path">
         <h6 v-html="node.title"/>
       </g-link>
