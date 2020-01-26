@@ -244,8 +244,8 @@ feedback helper, or set the `was-validated` class on a parent element (such as a
 Use the optional Boolean prop `tooltip` to change the display from a block to a static tooltip
 style. The feedback will typically appear below the form control. When this mode is enabled, it is
 important that the parent container have a `position: relative:` css style (or `position-relative`
-class). Note that tooltip style feedback may, since it's positioning is static, obscure other
-inputs, labels, etc.
+class). Note that tooltip style feedback may, since its positioning is static, obscure other inputs,
+labels, etc.
 
 **Note:** Some form controls, such as
 [`<b-form-radio>`](/docs/components/form-radio#contextual-states),
@@ -344,16 +344,18 @@ of three contextual states:
 - `null` Displays no validation state (neither valid nor invalid)
 
 Refer to the
-[Bootstrap v4 Form Validation Documentation](https://getbootstrap.com/docs/4.3/components/forms/#validation)
+[Bootstrap v4 Form Validation Documentation](https://getbootstrap.com/docs/4.4/components/forms/#validation)
 for details on the new Bootstrap v4 validation states.
 
 ### Validation mechanisms
 
-Documentation and examples (hopefully) coming soon.
+Using 3<sup>rd</sup> party Vue-based validation libraries with BootstrapVue:
 
-Please see the following references:
+- BootstrapVue [Form validation reference section](/docs/reference/validation)
 
-- [Bootstrap v4: Form Validation Documentation](https://getbootstrap.com/docs/4.3/components/forms/#validation)
+Additional resources:
+
+- [Bootstrap v4: Form Validation Documentation](https://getbootstrap.com/docs/4.4/components/forms/#validation)
 - [MDN: Learn Form Validation - Using JavaScript API](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation#Validating_forms_using_JavaScript)
 - [MDN: HTML5 Constraint Validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
 - [MDN: Validity State API](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)

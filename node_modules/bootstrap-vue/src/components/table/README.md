@@ -446,15 +446,18 @@ headers, sticky columns, and the table sorting feature, all require BootstrapVue
 <!-- b-table-bordered.vue -->
 ```
 
-### Row styling
+### Row styling and attributes
 
-You can also style every row using the `tbody-tr-class` prop
+You can also style every row using the `tbody-tr-class` prop, and optionally supply additional
+attributes via the `tbody-tr-attr` prop:
 
-| Property       | Type                      | Description                                                                                                                                                                    |
-| -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `tbodyTrClass` | String, Array or Function | Classes to be applied to every row on the table. If a function is given, it will be called as `tbodyTrClass( item, type )` and it may return an `Array`, `Object` or `String`. |
+| Property         | Type                      | Description                                                                                                                                                                    |
+| ---------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `tbody-tr-class` | String, Array or Function | Classes to be applied to every row on the table. If a function is given, it will be called as `tbodyTrClass( item, type )` and it may return an `Array`, `Object` or `String`. |
+| `tbody-tr-attr`  | Object or Function        | Attributes to be applied to every row on the table. If a function is given, it will be called as `tbodyTrAttr( item, type )` and it must return an `Object`.                   |
 
-When passing a function reference to `tbody-tr-class`, the function's arguments will be as follows:
+When passing a function reference to `tbody-tr-class` or `tbody-tr-attr`, the function's arguments
+will be as follows:
 
 - `item` - The item record data associated with the row. For rows that are not associated with an
   item record, this value will be `null` or `undefined`
@@ -485,7 +488,7 @@ When passing a function reference to `tbody-tr-class`, the function's arguments 
     },
     methods: {
       rowClass(item, type) {
-        if (!item) return
+        if (!item || type !== 'row') return
         if (item.status === 'awesome') return 'table-success'
       }
     }
@@ -1286,7 +1289,7 @@ available horizontal space.
 - BootstrapVue's custom CSS is required in order to support `sticky-header`.
 - Bootstrap v4 uses the CSS style `border-collapse: collapsed` on table elements. This prevents the
   borders on the sticky header from "sticking" to the header, and hence the borders will scroll when
-  the body scrolls. To get around this issue, set the pop `no-border-collapse` on the table (note
+  the body scrolls. To get around this issue, set the prop `no-border-collapse` on the table (note
   that this may cause double width borders when using features such as `bordered`, etc).
 - The sticky header feature uses CSS style `position: sticky` to position the headings. Internet
   Explorer does not support `position: sticky`, hence for IE11 the table headings will scroll with
@@ -1394,7 +1397,7 @@ If you would optionally like to display additional record information (such as c
 in the fields definition array), you can use the scoped slot `row-details`, in combination with the
 special item record Boolean property `_showDetails`.
 
-If the record has it's `_showDetails` property set to `true`, **and** a `row-details` scoped slot
+If the record has its `_showDetails` property set to `true`, **and** a `row-details` scoped slot
 exists, a new row will be shown just below the item, with the rendered contents of the `row-details`
 scoped slot.
 
@@ -1404,7 +1407,7 @@ scoped fields slot variable `detailsShowing` to determine the visibility of the 
 
 **Note:** If manipulating the `_showDetails` property directly on the item data (i.e. not via the
 `toggleDetails` function reference), the `_showDetails` properly **must** exist in the items data
-for proper reactive detection of changes to it's value. Read more about
+for proper reactive detection of changes to its value. Read more about
 [Vue's reactivity limitations](https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats).
 
 **Available `row-details` scoped variable properties:**
@@ -2257,12 +2260,12 @@ function myProvider(ctx) {
 
 ### Automated table busy state
 
-`<b-table>` automatically tracks/controls it's `busy` state when items provider functions are used,
+`<b-table>` automatically tracks/controls its `busy` state when items provider functions are used,
 however it also provides a `busy` prop that can be used either to override the inner `busy` state,
 or to monitor `<b-pagination>`'s current busy state in your application using the 2-way `.sync`
 modifier.
 
-**Note:** in order to allow `<b-table>` fully track it's `busy` state, the custom items provider
+**Note:** in order to allow `<b-table>` fully track its `busy` state, the custom items provider
 function should handle errors from data sources and return an empty array to `<b-table>`.
 
 **Example: usage of busy state**

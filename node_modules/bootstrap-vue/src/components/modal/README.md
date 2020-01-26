@@ -20,7 +20,7 @@
 
 `<b-modal>`, by default, has an **OK** and **Cancel** buttons in the footer. These buttons can be
 customized by setting various props on the component. You can customize the size of the buttons,
-disable buttons, hide the **Cancel** button (i.e. OK Only), choose a variant (e.g. `danger` for a
+disable buttons, hide the **Cancel** button (i.e. `ok-only`), choose a variant (e.g. `danger` for a
 red OK button) using the `ok-variant` and `cancel-variant` props, and provide custom button content
 using the `ok-title` and `cancel-title` props, or using the named slots `modal-ok` and
 `modal-cancel`.
@@ -74,7 +74,7 @@ See the [Accessibility](#accessibility) section below for details.
 
 ### Using `this.$bvModal.show()` and `this.$bvModal.hide()` instance methods
 
-When BootstrapVue is installed as a plugin, or the `ModalPlugin` plugin is used, BoostrapVue will
+When BootstrapVue is installed as a plugin, or the `ModalPlugin` plugin is used, BootstrapVue will
 inject a `$bvModal` object into every Vue instance (components, apps). `this.$bvModal` exposes
 several methods, of which two are for showing and hiding modals:
 
@@ -285,7 +285,7 @@ To prevent `<b-modal>` from closing (for example when validation fails). you can
     methods: {
       checkFormValidity() {
         const valid = this.$refs.form.checkValidity()
-        this.nameState = valid ? 'valid' : 'invalid'
+        this.nameState = valid
         return valid
       },
       resetModal() {
@@ -307,7 +307,7 @@ To prevent `<b-modal>` from closing (for example when validation fails). you can
         this.submittedNames.push(this.name)
         // Hide the modal manually
         this.$nextTick(() => {
-          this.$refs.modal.hide()
+          this.$bvModal.hide('modal-prevent-closing')
         })
       }
     }
@@ -930,10 +930,11 @@ Example Confirm Message boxes
   by default. You can enable the header close button by setting `hideHeaderClose: false` in the
   options.
 - Message Boxes will throw an error (promise rejection) if they are closed/destroyed before they are
-  hidden. Always include a `.catch(error => { /* handler code */ })` reject handler, event if using
-  the async `await` style code.
+  hidden. Always include a `.catch(errHandler)` reject handler, event if using the async `await`
+  style code.
 - When using Vue Router (or similar), Message Boxes will close and reject if the route changes
-  before the modal hides.
+  before the modal hides. If you wish for the message box to remain open when the route changes, use
+  `this.$root.$bvModal` instead of `this.$bvModal`.
 - Message boxes cannot be generated during Server Side Rendering (SSR).
 - The Message Box `message` currently does not support HTML strings, however, you can pass an
   _array_ of `VNodes` as the `message` for fine grained control of the markup. You can use Vue's

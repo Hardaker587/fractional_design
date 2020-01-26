@@ -19,7 +19,9 @@ import { isString, isUndefinedOrNull } from '../../utils/inspect'
 import { HTMLElement } from '../../utils/safe-types'
 import { BTransporterSingle } from '../../utils/transporter'
 import idMixin from '../../mixins/id'
+import listenOnDocumentMixin from '../../mixins/listen-on-document'
 import listenOnRootMixin from '../../mixins/listen-on-root'
+import listenOnWindowMixin from '../../mixins/listen-on-window'
 import normalizeSlotMixin from '../../mixins/normalize-slot'
 import scopedStyleAttrsMixin from '../../mixins/scoped-style-attrs'
 import { BButton } from '../button/button'
@@ -229,6 +231,10 @@ export const props = {
     type: [HTMLElement, String, Object],
     default: null
   },
+  headerCloseContent: {
+    type: String,
+    default: () => getComponentConfig(NAME, 'headerCloseContent')
+  },
   headerCloseLabel: {
     type: String,
     default: () => getComponentConfig(NAME, 'headerCloseLabel')
@@ -280,7 +286,14 @@ export const props = {
 // @vue/component
 export const BModal = /*#__PURE__*/ Vue.extend({
   name: NAME,
-  mixins: [idMixin, listenOnRootMixin, normalizeSlotMixin, scopedStyleAttrsMixin],
+  mixins: [
+    idMixin,
+    listenOnDocumentMixin,
+    listenOnRootMixin,
+    listenOnWindowMixin,
+    normalizeSlotMixin,
+    scopedStyleAttrsMixin
+  ],
   inheritAttrs: false,
   model: {
     prop: 'visible',
@@ -329,7 +342,7 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     dialogClasses() {
       return [
         {
-          [`modal-${this.size}`]: Boolean(this.size),
+          [`modal-${this.size}`]: this.size,
           'modal-dialog-centered': this.centered,
           'modal-dialog-scrollable': this.scrollable
         },
@@ -339,9 +352,9 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     headerClasses() {
       return [
         {
-          [`bg-${this.headerBgVariant}`]: Boolean(this.headerBgVariant),
-          [`text-${this.headerTextVariant}`]: Boolean(this.headerTextVariant),
-          [`border-${this.headerBorderVariant}`]: Boolean(this.headerBorderVariant)
+          [`bg-${this.headerBgVariant}`]: this.headerBgVariant,
+          [`text-${this.headerTextVariant}`]: this.headerTextVariant,
+          [`border-${this.headerBorderVariant}`]: this.headerBorderVariant
         },
         this.headerClass
       ]
@@ -352,8 +365,8 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     bodyClasses() {
       return [
         {
-          [`bg-${this.bodyBgVariant}`]: Boolean(this.bodyBgVariant),
-          [`text-${this.bodyTextVariant}`]: Boolean(this.bodyTextVariant)
+          [`bg-${this.bodyBgVariant}`]: this.bodyBgVariant,
+          [`text-${this.bodyTextVariant}`]: this.bodyTextVariant
         },
         this.bodyClass
       ]
@@ -361,9 +374,9 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     footerClasses() {
       return [
         {
-          [`bg-${this.footerBgVariant}`]: Boolean(this.footerBgVariant),
-          [`text-${this.footerTextVariant}`]: Boolean(this.footerTextVariant),
-          [`border-${this.footerBorderVariant}`]: Boolean(this.footerBorderVariant)
+          [`bg-${this.footerBgVariant}`]: this.footerBgVariant,
+          [`text-${this.footerTextVariant}`]: this.footerTextVariant,
+          [`border-${this.footerBorderVariant}`]: this.footerBorderVariant
         },
         this.footerClass
       ]
@@ -418,8 +431,6 @@ export const BModal = /*#__PURE__*/ Vue.extend({
       this._observer.disconnect()
       this._observer = null
     }
-    this.setEnforceFocus(false)
-    this.setResizeEvent(false)
     if (this.isVisible) {
       this.isVisible = false
       this.isShow = false
@@ -637,7 +648,7 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     emitEvent(bvModalEvt) {
       const type = bvModalEvt.type
       // We emit on root first incase a global listener wants to cancel
-      // the event first before the instance emits it's event
+      // the event first before the instance emits its event
       this.emitOnRoot(`bv::modal::${type}`, bvModalEvt, bvModalEvt.componentId)
       this.$emit(type, bvModalEvt)
     },
@@ -721,16 +732,12 @@ export const BModal = /*#__PURE__*/ Vue.extend({
     },
     // Turn on/off focusin listener
     setEnforceFocus(on) {
-      const method = on ? eventOn : eventOff
-      method(document, 'focusin', this.focusHandler, EVT_OPTIONS)
+      this.listenDocument(on, 'focusin', this.focusHandler)
     },
     // Resize listener
     setResizeEvent(on) {
-      const method = on ? eventOn : eventOff
-      // These events should probably also check if
-      // body is overflowing
-      method(window, 'resize', this.checkModalOverflow, EVT_OPTIONS)
-      method(window, 'orientationchange', this.checkModalOverflow, EVT_OPTIONS)
+      this.listenWindow(on, 'resize', this.checkModalOverflow)
+      this.listenWindow(on, 'orientationchange', this.checkModalOverflow)
     },
     // Root listener handlers
     showHandler(id, triggerEl) {
@@ -824,6 +831,7 @@ export const BModal = /*#__PURE__*/ Vue.extend({
               {
                 ref: 'close-button',
                 props: {
+                  content: this.headerCloseContent,
                   disabled: this.isTransitioning,
                   ariaLabel: this.headerCloseLabel,
                   textVariant: this.headerCloseVariant || this.headerTextVariant

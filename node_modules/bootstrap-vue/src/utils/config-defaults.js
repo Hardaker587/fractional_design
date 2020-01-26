@@ -59,6 +59,7 @@ export default deepFreeze({
     variant: 'secondary'
   },
   BButtonClose: {
+    content: '&times;',
     // `textVariant` is `null` to inherit the current text color
     textVariant: null,
     ariaLabel: 'Close'
@@ -84,6 +85,19 @@ export default deepFreeze({
     // Chrome default file prompt
     placeholder: 'No file chosen',
     dropPlaceholder: 'Drop files here'
+  },
+  BFormTag: {
+    removeLabel: 'Remove tag',
+    variant: 'secondary'
+  },
+  BFormTags: {
+    addButtonText: 'Add',
+    addButtonVariant: 'outline-secondary',
+    duplicateTagText: 'Duplicate tag(s)',
+    invalidTagText: 'Invalid tag(s)',
+    placeholder: 'Add tag...',
+    tagRemoveLabel: 'Remove tag',
+    tagVariant: 'secondary'
   },
   BFormText: {
     textVariant: 'muted'
@@ -121,6 +135,7 @@ export default deepFreeze({
     cancelVariant: 'secondary',
     okTitle: 'OK',
     okVariant: 'primary',
+    headerCloseContent: '&times;',
     headerCloseLabel: 'Close'
   },
   BNavbar: {

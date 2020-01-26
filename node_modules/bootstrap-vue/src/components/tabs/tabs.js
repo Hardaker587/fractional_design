@@ -1,4 +1,5 @@
 import Vue from '../../utils/vue'
+import identity from '../../utils/identity'
 import KeyCodes from '../../utils/key-codes'
 import looseEqual from '../../utils/loose-equal'
 import observeDom from '../../utils/observe-dom'
@@ -407,7 +408,7 @@ export const BTabs = /*#__PURE__*/ Vue.extend({
         const selector = tabs.map(tab => `#${tab.safeId()}`).join(', ')
         order = selectAll(selector, this.$el)
           .map(el => el.id)
-          .filter(Boolean)
+          .filter(identity)
       }
       // Stable sort keeps the original order if not found in the
       // `order` array, which will be an empty array before mount.
@@ -470,7 +471,7 @@ export const BTabs = /*#__PURE__*/ Vue.extend({
     getButtonForTab(tab) {
       return (this.$refs.buttons || []).find(btn => btn.tab === tab)
     },
-    // Force a button to re-render it's content, given a <b-tab> instance
+    // Force a button to re-render its content, given a <b-tab> instance
     // Called by <b-tab> on `update()`
     updateButton(tab) {
       const button = this.getButtonForTab(tab)
@@ -515,7 +516,7 @@ export const BTabs = /*#__PURE__*/ Vue.extend({
       /* istanbul ignore next: should never/rarely happen */
       return false
     },
-    // Focus a tab button given it's <b-tab> instance
+    // Focus a tab button given its <b-tab> instance
     focusButton(tab) {
       // Wrap in `$nextTick()` to ensure DOM has completed rendering/updating before focusing
       this.$nextTick(() => {

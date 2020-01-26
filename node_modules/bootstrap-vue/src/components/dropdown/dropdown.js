@@ -29,7 +29,7 @@ export const props = {
     default: false
   },
   menuClass: {
-    type: [String, Array],
+    type: [String, Array, Object],
     default: null
   },
   toggleTag: {
@@ -37,7 +37,7 @@ export const props = {
     default: 'button'
   },
   toggleClass: {
-    type: [String, Array],
+    type: [String, Array, Object],
     default: null
   },
   noCaret: {
@@ -59,6 +59,10 @@ export const props = {
   splitVariant: {
     type: String,
     default: () => getComponentConfig(NAME, 'splitVariant')
+  },
+  splitClass: {
+    type: [String, Array, Object],
+    default: null
   },
   splitButtonType: {
     type: String,
@@ -144,6 +148,7 @@ export const BDropdown = /*#__PURE__*/ Vue.extend({
         {
           ref: 'button',
           props: btnProps,
+          class: this.splitClass,
           attrs: {
             id: this.safeId('_BV_button_')
           },

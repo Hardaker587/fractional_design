@@ -3,7 +3,6 @@
  */
 
 import observeDom from '../../utils/observe-dom'
-import warn from '../../utils/warn'
 import {
   isElement,
   isVisible,
@@ -23,6 +22,7 @@ import {
 } from '../../utils/dom'
 import { isString, isUndefined } from '../../utils/inspect'
 import { toString as objectToString } from '../../utils/object'
+import { warn } from '../../utils/warn'
 
 /*
  * Constants / Defaults
@@ -435,7 +435,7 @@ class ScrollSpy /* istanbul ignore next: not easy to test */ {
 
     links.forEach(link => {
       if (hasClass(link, ClassName.DROPDOWN_ITEM)) {
-        // This is a dropdown item, so find the .dropdown-toggle and set it's state
+        // This is a dropdown item, so find the .dropdown-toggle and set its state
         const dropdown = closest(Selector.DROPDOWN, link)
         if (dropdown) {
           this.setActiveState(select(Selector.DROPDOWN_TOGGLE, dropdown), true)

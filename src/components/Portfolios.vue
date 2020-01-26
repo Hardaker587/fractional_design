@@ -1,5 +1,8 @@
 <template>
   <ul id="portfolio">
+       <template slot="control">
+        <button data-glide-dir="<">prev</button>
+      </template>
     <vue-glide>
     <vue-glide-slide v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
     <div class="image-container">
@@ -11,6 +14,9 @@
       <span v-html="node.date"/>
     </vue-glide-slide>
     </vue-glide>
+    <template slot="control">
+        <button data-glide-dir=">"><b-icon icon="arrow-up"></b-icon></button>
+      </template>
   </ul>
 </template>
 
