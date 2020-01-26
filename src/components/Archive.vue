@@ -2,7 +2,7 @@
 <ul id="pages">
     <li v-for="{ node } in $static.allPages.edges" :key="node.id">
       <g-link :to="node.path">
-        <h6 v-html="node.title"/>
+        <p v-html="node.title"/>
       </g-link>
       <span v-html="node.date"/>
     </li>
@@ -43,11 +43,12 @@
     a
       color: #fff !important 
 
-      span
+      p
         display: flex
         align-items: center
         color: #cdcdcd
         font-size: 14px
+        margin-bottom: 0px !important
 
   @media (min-width: 576px)
     #pages

@@ -1,14 +1,14 @@
 <template>
-	<div id="contact" class="d-flex align-items-center">
-		<div class="Contact__Content">
-			<!-- Content -->
-			<div class="Contact__Info d-flex flex-column">
-					<h2>{{ Contact.title }}</h2>
-				<p>{{ Contact.description }} </p>
-			</div>
-			<!-- Form -->
-			<div class="Contact__Form">
-				<form action="/thank-you" name="contact" method="POST" netlify data-netlify-honeypot="bot-field">
+    <div id="contact" class="d-flex align-items-center">
+        <div class="Contact__Content">
+            <!-- Content -->
+            <div class="Contact__Info d-flex flex-column">
+                <h2>{{ Contact.title }}</h2>
+                <p>{{ Contact.description }} </p>
+            </div>
+            <!-- Form -->
+            <div class="Contact__Form">
+                <!--<form action="/thank-you" name="contact" method="POST" netlify data-netlify-honeypot="bot-field">
 				<input type="hidden" name="form-name" value="contact" />
 					<label for="name">Name</label>
 					<input type="name" placeholder="What can we call you?" class="bg-light">
@@ -19,26 +19,67 @@
 					<label for="message">Message</label>
 					<textarea type="message" placeholder="Your message..." class="bg-light"/>
 					<button type="submit">Submit</button>
-				</form>
-			</div>
-		</div>
-	</div>
+				</form>-->
+                <form name="contact" method="post" v-on:submit.prevent="handleSubmit" action="/success/" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p hidden>
+                        <label>
+                            Don’t fill this out: <input name="bot-field" />
+                        </label>
+                    </p>
+                            <label for="name" class="label">Your name</label>
+                            <input type="text" name="name" v-model="formData.name" class="bg-light"/>
+
+                            <label for="email">Your email</label>
+                            <input type="email" name="email" v-model="formData.email" class="bg-light"/>
+
+                        <label for="message">Message</label>
+                        <textarea name="message" v-model="formData.message" class="bg-light"></textarea>
+
+                    <button type="submit">Submit form</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-	import Contact from '~/data/Contact.yml'
-	//import SocialMedia from '~/data/SocialMedia.yml'
+    import Contact from '~/data/Contact.yml'
+    //import SocialMedia from '~/data/SocialMedia.yml'
 
-	export default {
-		computed: {
-			Contact () {
-				return Contact
-			}
-//			SocialMedia () {
-//				return SocialMedia
-//			}
-		}
-	}  
+    export default {
+        data() {
+            return {
+                formData: {},
+            }
+        },
+        computed: {
+            Contact() {
+                return Contact
+            }
+        },
+        methods: {
+            encode(data) {
+                return Object.keys(data)
+                    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+                    .join('&')
+            },
+            handleSubmit(e) {
+                fetch('/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: this.encode({
+                            'form-name': e.target.getAttribute('name'),
+                            ...this.formData,
+                        }),
+                    })
+                    .then(() => this.$router.push('/thank-you'))
+                    .catch(error => alert(error))
+            }
+        }
+    }
 </script>
 
 <style lang="sass" scoped>

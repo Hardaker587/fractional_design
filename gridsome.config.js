@@ -1,6 +1,6 @@
 module.exports = {
     siteName: 'Fractional Design',
-    siteUrl: 'https://www.fractionaldesign.co.za',
+    siteUrl: '',
     siteDescription: 'Personal Website for Gavin Hardaker - Front-end Developer and UX Specialist',
     titleTemplate: `%s - Gridsome`,
 
@@ -34,7 +34,20 @@ module.exports = {
                 typeName: 'Portfolio',
                 route: '/portfolio/:slug'
             }
-		}
+		},
+        {
+            use: 'gridsome-plugin-flexsearch',
+            options: {
+                collections: [
+                    {
+                        typeName: 'BlogPost',
+                        indexName: 'BlogPost',
+                        fields: ['title', 'slug', 'date']
+            }
+                ],
+                searchFields: ['title']
+            }
+                }
 	],
 
 }

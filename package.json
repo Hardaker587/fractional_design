@@ -12,6 +12,7 @@
 		"bootstrap": "^4.4.1",
 		"bootstrap-vue": "^2.1.0",
 		"gridsome": "^0.7.1",
+		"gridsome-plugin-flexsearch": "^0.1.10",
 		"netlify-cms": "^2.10.2",
 		"node-sass": "^4.11.0",
 		"prerender-spa-plugin": "^3.4.0",
