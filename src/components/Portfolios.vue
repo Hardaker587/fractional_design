@@ -1,9 +1,6 @@
 <template>
   <ul id="portfolio">
-       <template slot="control">
-        <button data-glide-dir="<">prev</button>
-      </template>
-    <vue-glide>
+    <vue-glide class="slide" rewind="false">
     <vue-glide-slide v-for="{ node } in $static.allPortfolio.edges" :key="node.id">
     <div class="image-container">
         <img :src="node.thumbnail" />
@@ -13,10 +10,13 @@
       </g-link>
       <span v-html="node.date"/>
     </vue-glide-slide>
-    </vue-glide>
-    <template slot="control">
-        <button data-glide-dir=">"><b-icon icon="arrow-up"></b-icon></button>
+          <template slot="control">
+        <button data-glide-dir="<"><b-icon-arrow-left-short
+></b-icon-arrow-left-short></button>
+        <button data-glide-dir=">"><b-icon-arrow-right-short
+></b-icon-arrow-right-short></button>
       </template>
+    </vue-glide>
   </ul>
 </template>
 
@@ -37,8 +37,14 @@
 </static-query>
 
 <style lang="sass" scoped>
+
   #portfolio
     padding: 30px 0
+    text-align: center
+    
+    .glide
+      display: flex
+      align-items: center
 
     li
       display: flex
@@ -73,9 +79,7 @@
   @media (min-width: 576px)
     #portfolio
       padding: 50px 0
-      display: grid
-      grid-template-columns: repeat(2, auto)
-      grid-gap: 2em
+
 
       li
         margin-bottom: 0

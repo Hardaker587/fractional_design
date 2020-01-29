@@ -10,6 +10,12 @@
       </g-link>
       <span v-html="node.date"/>
     </vue-glide-slide>
+              <template slot="control">
+        <button data-glide-dir="<"><b-icon-arrow-left-short
+></b-icon-arrow-left-short></button>
+        <button data-glide-dir=">"><b-icon-arrow-right-short
+></b-icon-arrow-right-short></button>
+      </template>
     </vue-glide>
   </ul>
 </template>
@@ -33,6 +39,10 @@
 <style lang="sass" scoped>
   #blog
     padding: 30px 0
+    
+    .glide
+      display: flex
+      align-items: center
 
     li
       display: flex
@@ -53,9 +63,6 @@
   @media (min-width: 576px)
     #blog
       padding: 50px 0
-      display: grid
-      grid-template-columns: repeat(2, auto)
-      grid-gap: 2em
 
       li
         margin-bottom: 0

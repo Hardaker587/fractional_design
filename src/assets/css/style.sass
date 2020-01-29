@@ -50,6 +50,25 @@ h6
 .owl-item
     margin: 10px 0
     
+div[data-glide-el='controls']
+  position: absolute
+  width: 100%
+  display: flex
+  justify-content: space-between
+    
+  button
+    background: #fff
+    box-shadow: 3px 3px 5px rgba(163,177,198,0.6), -3px -3px 5px  rgba(255,255,255, 0.5)
+    border: none
+    padding: 10px
+    z-index: 10
+    
+    &:hover
+      filter: invert(100)
+    
+.glide__track
+  z-index: 4
+
 .not-found .container
     height: 100vh
     display: flex

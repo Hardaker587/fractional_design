@@ -8,6 +8,6 @@ export default [
   },
   {
     run: plugin_gridsome_plugin_flexsearch_9,
-    options: {"collections":[{"typeName":"BlogPost","indexName":"BlogPost","fields":["title","slug","date"]}],"searchFields":["title"],"flexsearch":{"profile":"default"}}
+    options: {"pathPrefix":"","collections":[{"typeName":"BlogPost","indexName":"BlogPost","fields":["title","slug","date"]}],"searchFields":["title"],"flexsearch":{"profile":"default"}}
   }
 ]
