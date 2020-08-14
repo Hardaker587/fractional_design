@@ -26,8 +26,8 @@ collections:
       - { label: "date", name: "date", widget: "date" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false }
-      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false }
+      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false, default_language: "css"}
+      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false, default_language: "javascript" }
       - { label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png" }
 
   - name: "pages"
@@ -38,8 +38,8 @@ collections:
       - { label: "title", name: "title", widget: "string" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false }
-      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false }
+      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false , default_language: "css"}
+      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false , default_language: "javascript"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false }
     folder: "sitePages"  
     
@@ -53,6 +53,6 @@ collections:
       - { label: "date", name: "date", widget: "date" }
       - { label: "slug", name: "slug", widget: "string" }
       - { label: "body", name: "body", widget: "markdown" }
-      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false }
-      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false }
+      - { label: "Custom Styles", name: "customStyles", widget: "code", required: false , default_language: "css"}
+      - { label: "Custom Scripts", name: "customScripts", widget: "code", required: false , default_language: "javascript"}
       - { label: "Featured Image", name: "thumbnail", widget: "image", default: "../assets/images/Services.png", required: false}
