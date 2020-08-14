@@ -29,7 +29,6 @@
       title
       date (format: "DD MMMM YYYY")
       content
-
     }
   }
 </page-query>

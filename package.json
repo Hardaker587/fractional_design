@@ -13,6 +13,7 @@
 		"bootstrap-vue": "^2.3.0",
 		"gridsome": "^0.7.1",
 		"gridsome-plugin-flexsearch": "^0.1.11",
+		"gridsome-transformer-netlify": "^1.0.3",
 		"netlify-cms": "^2.10.12",
 		"node-sass": "^4.13.1",
 		"prerender-spa-plugin": "^3.4.0",

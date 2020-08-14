@@ -3,7 +3,16 @@ module.exports = {
     siteUrl: '',
     siteDescription: 'Personal Website for Gavin Hardaker - Front-end Developer and UX Specialist',
     titleTemplate: `%s - Gridsome`,
-
+    transformers: {
+        remark: {
+            externalLinksTarget: '_blank',
+            externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+            anchorClassName: 'icon icon-link',
+            plugins: [
+                // ...global plugins
+            ]
+        }
+    },
     plugins: [
         {
             use: '@gridsome/plugin-google-analytics',
