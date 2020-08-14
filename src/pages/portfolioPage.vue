@@ -1,22 +1,16 @@
 <template>
   <Layout>
-    <Header/>
     <h2>Latest passion projects</h2>
-    <Portfolio/>
-    <Footer/>
+    <PortfolioPages/>
   </Layout>
 </template>
 
 <script>
-  import Header from '~/components/Header.vue';
-  import Portfolio from '~/components/Portfolios.vue';
-  import Footer from '~/components/Footer.vue';
-  
+  import PortfolioPages from '~/components/Portfolio/PortfolioPages.vue';
+
   export default {
     components: { 
-      Header,
-      Portfolio,
-      Footer
+      PortfolioPages
     },
   }
 </script>

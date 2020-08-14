@@ -1,6 +1,5 @@
 <template>
   <Layout>
-    <Header/>
     <div class="article">
       <div class="meta">
         <h1>{{ $page.portfolio.title }}</h1>
@@ -8,18 +7,13 @@
       </div>
       <div class="article__content" v-html="$page.portfolio.content" />
     </div>
-    <Footer/>
   </Layout>
 </template>
 
 <script>
-  import Header from '~/components/Header.vue';
-  import Footer from '~/components/Footer.vue';
-
   export default {
     components: {
-      Header,
-      Footer
+
     },
     metaInfo () {
       return {
