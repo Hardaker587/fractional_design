@@ -1,6 +1,20 @@
-# Gridsome Starter NetlifyCMS
+# fractional_design
 
-Now modify your website directly from NetlifyCMS, no need to mess around with coding. 😅
+## Build Setup
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Hardaker587/fractional_design)
+```bash
+# install dependencies
+$ npm install
 
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
