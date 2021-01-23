@@ -6,10 +6,16 @@
       flat
     >
       <div class="introductionHolder white--text">
-        <div class="text-h2 font-weight-black">
+        <div
+          class="font-weight-black"
+          :class="$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h2'"
+        >
           Hey there internet explorer!
         </div>
-        <div class="text-h4 font-weight-bold">
+        <div
+          class="text-h4 font-weight-bold"
+          :class="$vuetify.breakpoint.smAndDown ? 'text-h6' : 'text-h4'"
+        >
           Looks like you've found my website! Let me introduce myself...
           <br />
           My name is

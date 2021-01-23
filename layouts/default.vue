@@ -6,8 +6,10 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer fixed app dark>
+      <span>&copy; Fractional Design {{ new Date().getFullYear() }}</span>
+      <v-spacer></v-spacer>
+      <span>All rights reserved</span>
     </v-footer>
   </v-app>
 </template>

@@ -22,7 +22,8 @@
     "firebase": "^8.2.3",
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.13.1",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "tiptap-vuetify": "^2.24.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

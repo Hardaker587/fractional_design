@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row style="max-width: 100vw">
     <v-col cols="12">
       <site-page-title
         title="Blog"
@@ -7,7 +7,11 @@
         link="/blog"
         link-text="View all"
     /></v-col>
-    <v-col v-for="(n, i) in 6" :key="i" cols="4">
+    <v-col
+      v-for="(n, i) in 6"
+      :key="i"
+      :cols="$vuetify.breakpoint.smAndDown ? 12 : 4"
+    >
       <BlogItem />
     </v-col>
   </v-row>
