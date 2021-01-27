@@ -16,7 +16,7 @@
     "@nuxtjs/cloudinary": "^1.0.3-beta-2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/firebase": "^7.3.3",
-    "@nuxtjs/pwa": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "firebase": "^8.2.3",
